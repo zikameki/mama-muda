@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mama muda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: black;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px; /* Spacing between buttons */
+        }
+
+        .filter-buttons button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #9400D3;
+            background-color: #FFF5EE;
+            color: #00CED1;
+            border-radius: 50px; /* Rounded buttons */
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .filter-buttons button.active,
+        .filter-buttons button:hover {
+            background-color: white;
+            color: #228B22;
+            border-color: #FF00FF;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .media-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+        }
+
+        .media-item img,
+        .media-item video,
+        .media-item audio {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .media-item h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+    <h1>iseng lah cuy</h1>
+    <div class="gallery">
+        
+        <div class="media-item" data-type="audio">
+            <h2>Pap istri ke satu ini</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/DLZBxoRvaZzJMR7m7ZgPP97ZZuXVAkkZQ5ZZLJJZZv7rpZ7LZApZSRZbeUEMcsY3IYNIJOesBxi7yiU0dBX/wawa-yulla.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>my girl🤗</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/cfZtV7LvaZdaPR7m7ZgPP97ZZvrVAkkZQ5ZZLJJZZJh3NZtRZszZCFZxYZHLZR8ZnRZKHZIHZCLZk8ZM8ZULZrHZ6r9R8ev7B2m6l5fwEenbehdEyFaV/girlfriend-wawa.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>pecandu tiktok</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/DLZYxBRvaZeW8z7m7ZgPP97ZZkoVAkkZQ5ZZLJJZZJhr5ZxQZ9HZsLZCkD8vWlGpBpeiR4Jys1Tr7rO0YNy/wi.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>Live ig</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/cfZOGCjvaZAHbn7m7ZgPP97ZZkp0AkkZQ5ZZLJJZZWrN07ZURZg8Zn8Zb8Zp4Zv8Zz8ZqzZCRZtpZQHZ2QZQLZdQZoOaX3MOjFgLrydVfBvKmkBsFOhqV/live.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>nyanda mampan</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/cfZTqxjvaZhEhn7m7ZgPP97ZZnp0AkkZQ5ZZLJJZZC3M27ZCLZHLZ0YZzQZ28ZbQZQHZ5pZ0QZc4ZpRZt4ZyRZ94ZQKVkOP1j7858HqosuL24s4E0yGOy/Nyanda-mampan.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>ranto gudel🗿</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/DLZLwxjvaZwPhn7m7ZgPP97ZZip0AkkZQ5ZZLJJZZUXwkZ18ZzLZKzZymbXfMBOepb6MPrOgSJbVh4grR2k/ranto.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+      
+      <div class="media-item" data-type="audio">
+            <h2>yalili</h2>
+            <video controls>
+                <source src="https://p-tok1.pcloud.com/DLZ0DxjvaZR4hn7m7ZgPP97ZZ8H0AkkZQ5ZZLJJZZ0yfFZXRZGpZaRZcmVefayA5RzT7wbQYLOfVBcxHfMX/yalili.mp4" type="video/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Image Item -->
+        <!-- Tambahkan lebih banyak video, audio, atau foto di sini -->
+    </div>
+
+    <script>
+        function filterMedia(type) {
+            const allItems = document.querySelectorAll('.media-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(button => button.classList.remove('active'));
+            document.querySelector(`[onclick="filterMedia('${type}')"]`).classList.add('active');
+
+            allItems.forEach(item => {
+                if (type === 'all' || item.getAttribute('data-type') === type) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
