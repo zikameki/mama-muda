@@ -19,31 +19,6 @@
             color: black;
         }
 
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            gap: 10px; /* Spacing between buttons */
-        }
-
-        .filter-buttons button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border: 2px solid #9400D3;
-            background-color: #FFF5EE;
-            color: #00CED1;
-            border-radius: 50px; /* Rounded buttons */
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .filter-buttons button.active,
-        .filter-buttons button:hover {
-            background-color: white;
-            color: #228B22;
-            border-color: #FF00FF;
-        }
-
         .gallery {
             display: flex;
             flex-direction: column;
@@ -63,124 +38,72 @@
             width: 100%;
         }
 
-        .media-item img,
-        .media-item video,
-        .media-item audio {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
         .media-item h2 {
             font-size: 18px;
             margin: 10px 0;
             color: #FF00FF;
         }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            cursor: not-allowed; /* Mencegah klik */
+            border-radius: 8px; /* Cocokkan dengan video */
+        }
     </style>
 </head>
 <body>
-    <h1>public viewing</h1>
+    <h1>Public Viewing</h1>
     <div class="gallery">
-        
-        <div class="media-item" data-type="audio">
+
+        <div class="media-item" data-type="video">
             <h2>Pap istri ter imut</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-1.mp4?alt=media&token=0dd7de8d-8840-45bc-8722-db5bd6ff65f2" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
+            <div class="video-container">
+                <video controls controlsList="nodownload">
+                    <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-1.mp4?alt=media&token=0dd7de8d-8840-45bc-8722-db5bd6ff65f2" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <div class="overlay"></div>
+            </div>
         </div>
-      
-      <div class="media-item" data-type="audio">
+
+        <div class="media-item" data-type="video">
             <h2>my girl🤗</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-2.mp4?alt=media&token=0a200440-56dc-458f-9d52-f0048310af62" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
+            <div class="video-container">
+                <video controls controlsList="nodownload">
+                    <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-2.mp4?alt=media&token=0a200440-56dc-458f-9d52-f0048310af62" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <div class="overlay"></div>
+            </div>
         </div>
-      
-      <div class="media-item" data-type="audio">
+
+        <div class="media-item" data-type="video">
             <h2>pecandu tiktok</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-3.mp4?alt=media&token=99275eab-3ccc-4579-b59a-4987068ea636" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="audio">
-            <h2>Live ig</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-4.mp4?alt=media&token=697c0c37-51af-4e60-b272-e8ee1a3db217" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="audio">
-            <h2>nyanda mampan</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-5.mp4?alt=media&token=d6214270-9e73-43df-a21c-ad63c6838b58" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="audio">
-            <h2>ranto gudel🗿</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-6.mp4?alt=media&token=3f513fe0-4299-4c41-8bd0-cb420eee4a6f" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h2>yalili</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-7.mp4?alt=media&token=56e24079-df2b-4dd0-bdcb-ac4b75562f76" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h2>si paling jj</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-8.mp4?alt=media&token=09ae0f14-a824-42d6-aa0a-b9221862fb03" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h2>Scout</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-9.mp4?alt=media&token=b4c00204-a5f9-43ce-92a5-8c5dc324cae9" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h2>tante tante</h2>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa10.mp4?alt=media&token=5d24388a-ba36-4dd6-83bc-8ca484238f45" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
+            <div class="video-container">
+                <video controls controlsList="nodownload">
+                    <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-3.mp4?alt=media&token=99275eab-3ccc-4579-b59a-4987068ea636" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+                <div class="overlay"></div>
+            </div>
         </div>
 
-        <!-- Image Item -->
-        <!-- Tambahkan lebih banyak video, audio, atau foto di sini -->
     </div>
-
-    <script>
-        function filterMedia(type) {
-            const allItems = document.querySelectorAll('.media-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            buttons.forEach(button => button.classList.remove('active'));
-            document.querySelector(`[onclick="filterMedia('${type}')"]`).classList.add('active');
-
-            allItems.forEach(item => {
-                if (type === 'all' || item.getAttribute('data-type') === type) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
