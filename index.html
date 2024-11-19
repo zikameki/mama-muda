@@ -216,28 +216,7 @@
                 Your browser does not support the audio element.
             </video>
         </div>
-      
-      
-      
         <!-- Tambahkan lebih banyak video, audio, atau foto di sini -->
     </div>
-
-    <script>
-        function filterMedia(type) {
-            const allItems = document.querySelectorAll('.media-item');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            buttons.forEach(button => button.classList.remove('active'));
-            document.querySelector(`[onclick="filterMedia('${type}')"]`).classList.add('active');
-
-            allItems.forEach(item => {
-                if (type === 'all' || item.getAttribute('data-type') === type) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
