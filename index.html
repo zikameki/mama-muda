@@ -155,7 +155,7 @@
         <button onclick="checkPassword()">Submit</button>
     </div>
   <div id="incorrect-password-link" style="display: none;">
-    <a href="https://t.me/zakifrq" target="_blank">Incorrect password? Click here to <u>contact me on Telegram.</u></a>
+    <a href="https://t.me/zakifrq" target="_blank">Incorrect password? Click here to <strong><u>contact me on Telegram.</u></strong></a>
 </div>
 
 
@@ -310,48 +310,67 @@
 
     <button onclick="goBack()">Back</button>
 </div>
-
-
+    
     <script>
-        // Menampilkan input password saat gambar diklik
-function showPasswordInput() {
-    document.getElementById('password-input-container').style.display = 'block';
-    const passwordField = document.getElementById('password');
-    passwordField.value = ''; // Reset nilai sandi
-    passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
-}
+    // Menampilkan atau menyembunyikan input password saat gambar diklik
+    function togglePasswordInput() {
+        const inputContainer = document.getElementById('password-input-container');
+        const hiddenContent = document.getElementById('hidden-content');
+        const incorrectPasswordLink = document.getElementById('incorrect-password-link');
 
-// Memeriksa password dan menampilkan konten tersembunyi jika benar
-function checkPassword() {
-    const correctPassword = "wawasangek"; // Password yang diinginkan
-    const passwordField = document.getElementById('password');
-    const inputPassword = passwordField.value;
+        // Jika input password ditampilkan, sembunyikan
+        if (inputContainer.style.display === 'block') {
+            inputContainer.style.display = 'none';
+            hiddenContent.style.display = 'none'; // Pastikan konten tersembunyi juga disembunyikan
+            incorrectPasswordLink.style.display = 'none'; // Sembunyikan link jika ada
+        } else {
+            // Jika input password disembunyikan, tampilkan
+            inputContainer.style.display = 'block';
+        }
 
-    if (inputPassword === correctPassword) {
-        // Sembunyikan input dan tampilkan konten tersembunyi
-        document.getElementById('password-input-container').style.display = 'none';
-        document.getElementById('hidden-content').style.display = 'block';
-        document.getElementById('incorrect-password-link').style.display = 'none'; // Sembunyikan link jika password benar
-        passwordField.value = ''; // Reset nilai sandi setelah berhasil
-    } else {
-        // Jika password salah, tampilkan link Telegram
-        document.getElementById('incorrect-password-link').style.display = 'block';
-        passwordField.value = ''; // Reset nilai sandi setelah salah
+        const passwordField = document.getElementById('password');
+        passwordField.value = ''; // Reset nilai sandi
+        passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
     }
-}
 
-// Mengembalikan ke input password
-function goBack() {
-    document.getElementById('password-input-container').style.display = 'block';
-    document.getElementById('hidden-content').style.display = 'none';
-    const passwordField = document.getElementById('password');
-    passwordField.value = ''; // Reset nilai sandi
-    passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
-}
+    // Memeriksa password dan menampilkan konten tersembunyi jika benar
+    function checkPassword() {
+        const correctPassword = "wawasangek"; // Password yang diinginkan
+        const passwordField = document.getElementById('password');
+        const inputPassword = passwordField.value;
+        const incorrectPasswordLink = document.getElementById('incorrect-password-link');
 
-// Menambahkan event listener untuk gambar kunci
-document.getElementById('security-icon').addEventListener('click', showPasswordInput);
+        if (inputPassword === correctPassword) {
+            // Sembunyikan input dan tampilkan konten tersembunyi
+            document.getElementById('password-input-container').style.display = 'none';
+            document.getElementById('hidden-content').style.display = 'block';
+            incorrectPasswordLink.style.display = 'none'; // Sembunyikan link jika password benar
+            passwordField.value = ''; // Reset nilai sandi setelah berhasil
+        } else {
+            // Jika password salah, tampilkan link dan sembunyikan setelah 3 detik
+            incorrectPasswordLink.style.display = 'block';
+            passwordField.value = ''; // Reset nilai sandi setelah salah
 
-    </script>
+            // Menghilangkan link "Incorrect password" setelah 3 detik
+            setTimeout(() => {
+                incorrectPasswordLink.style.display = 'none';
+            }, 5000); // 5000ms = 5 detik
+        }
+    }
+
+    // Mengembalikan ke input password
+    function goBack() {
+        document.getElementById('password-input-container').style.display = 'block';
+        document.getElementById('hidden-content').style.display = 'none';
+        const passwordField = document.getElementById('password');
+        passwordField.value = ''; // Reset nilai sandi
+        passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
+    }
+
+    // Menambahkan event listener untuk gambar kunci
+    document.getElementById('security-icon').addEventListener('click', togglePasswordInput);
+</script>
+
+
 </body>
 </html>
