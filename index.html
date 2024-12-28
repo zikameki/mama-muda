@@ -3,382 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wi locked</title>
+    <title>girls</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f3f4f6;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF0F5, #E6E6FA);
+            color: #fff;
+            height: auto;
+            min-height: 100vh;
+            overflow-y: auto;
         }
-    
-      a{
-          text-decoration: none;
-          color: red;
-      }
-      
-      h2{
-          color: #48D1CC;
-      }
-    
-      .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1000px; /* Tingkatkan lebar maksimal */
-    margin: 0 auto;
-    padding: 30px; /* Tambahkan padding untuk memperbesar area */
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-
-.media-item video {
-    background-color: white;
-    padding: 20px; /* Tambahkan padding untuk memperbesar area dalam kotak */
-    margin-bottom: 30px; /* Beri jarak lebih besar antar video */
-    border-radius: 10px; /* Sedikit lebih besar untuk estetika */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Tambahkan shadow lebih besar */
-    width: 100%; 
-    max-width: 950px; /* Lebar maksimal lebih besar */
-    box-sizing: border-box;
-}
-
-
-
-       /* Styling untuk teks di atas video (judul) */
-     .media-item h3 {
-        font-size: 15px;      /* Ukuran font untuk judul */
-        color: #9370DB;           /* Warna font */
-        margin: 10px 0;  /* Memberikan jarak antara judul dan video */
-     }
-
-    
-        #security-icon {
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
+        video {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
         }
-
-        #password-input-container {
-            display: none;
+        video:hover {
+            transform: scale(1.05);
+        }
+        video:first-of-type {
+            margin-top: 20px; /* Menambahkan jarak ke video pertama */
+        }
+        .button-container {
             margin-top: 20px;
+            margin-bottom: 40px;
         }
-
-        #hidden-content {
-            display: none;
-            margin-top: 20px;
+        .instagram-button {
+            display: block;
+            width: 80px;
+            height: 80px;
+            background-image: url('icon.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
-
-        input {
-            padding: 10px;
-            font-size: 16px;
+        .instagram-button:active {
+            animation: glitch 0.3s infinite linear alternate;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 1);
+            transform: scale(1.1);
         }
-
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-            color: #FFFFF0;
-            text-shadow: 
-        0 0 3px #FFD700,  /* Mengurangi efek neon kuning emas */
-        0 0 5px #FFD700,
-        0 0 10px #FFD700;
-      animation: flicker 2s infinite alternate, glitter 1s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% {
-        text-shadow: 
-          0 0 3px #FFD700,
-          0 0 5px #FFD700,
-          0 0 10px #FFD700;
-      }
-      50% {
-        text-shadow: 
-          0 0 2px #FFD700,
-          0 0 4px #FFD700,
-          0 0 8px #FFD700;
-      }
-    }
-
-    @keyframes glitter {
-      0% {
-        text-shadow: 
-          0 0 3px #FFD700, 
-          0 0 5px #FFD700, 
-          0 0 10px #FFD700;
-      }
-      25% {
-        text-shadow: 
-          0 0 2px #FFD700, 
-          0 0 4px #FFD700, 
-          0 0 8px #FFD700;
-      }
-      50% {
-        text-shadow: 
-          0 0 3px #FFD700, 
-          0 0 5px #FFD700, 
-          0 0 10px #FFD700;
-      }
-      75% {
-        text-shadow: 
-          0 0 2px #FFD700, 
-          0 0 4px #FFD700, 
-          0 0 8px #FFD700;
-      }
-      100% {
-        text-shadow: 
-          0 0 3px #FFD700, 
-          0 0 5px #FFD700, 
-          0 0 10px #FFD700;
-      }
+        @keyframes glitch {
+            0% {
+                transform: skew(-5deg);
+                text-shadow: 1px 0px 0px rgba(0, 255, 255, 1), -1px 0px 0px rgba(0, 255, 255, 0.8);
+            }
+            20% {
+                transform: skew(5deg);
+                text-shadow: -1px 0px 0px rgba(0, 255, 255, 0.8), 1px 0px 0px rgba(0, 255, 255, 1);
+            }
+            100% {
+                transform: skew(5deg);
+                text-shadow: -1px 0px 0px rgba(0, 255, 255, 0.8), 1px 0px 0px rgba(0, 255, 255, 1);
+            }
         }
-
-        button:hover {
-            background-color: silver;
+        .instagram-button:active {
+            transform: scale(0.95);
         }
-
-
     </style>
 </head>
 <body>
-    <h1>What are you looking for here?</h1>
-    <p>Click the key to unlock the hidden section.</p>
-
-    <!-- Gambar kunci -->
-    <img id="security-icon" src="sandi.jpg" alt="gambar e rusak">
-
-    <!-- Input password -->
-    <div id="password-input-container">
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="checkPassword()">Submit</button>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-1.mp4?alt=media&token=0dd7de8d-8840-45bc-8722-db5bd6ff65f2" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-2.mp4?alt=media&token=0a200440-56dc-458f-9d52-f0048310af62" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-3.mp4?alt=media&token=99275eab-3ccc-4579-b59a-4987068ea636" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-4.mp4?alt=media&token=697c0c37-51af-4e60-b272-e8ee1a3db217" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-5.mp4?alt=media&token=d6214270-9e73-43df-a21c-ad63c6838b58" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-6.mp4?alt=media&token=3f513fe0-4299-4c41-8bd0-cb420eee4a6f" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-7.mp4?alt=media&token=56e24079-df2b-4dd0-bdcb-ac4b75562f76" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-8.mp4?alt=media&token=09ae0f14-a824-42d6-aa0a-b9221862fb03" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-9.mp4?alt=media&token=b4c00204-a5f9-43ce-92a5-8c5dc324cae9" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa10.mp4?alt=media&token=5d24388a-ba36-4dd6-83bc-8ca484238f45" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa11.mp4?alt=media&token=9e836a50-74e4-49e4-837d-a18db94db40d" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa12.mp4?alt=media&token=6fc3a12d-29d0-45e9-a294-b375261bb38f" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa13.mp4?alt=media&token=abb46988-e1e6-404b-a1ec-a88cd03b485b" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa14.mp4?alt=media&token=6c0347e5-07b6-4311-8ece-efb6f7161161" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa15.mp4?alt=media&token=3db96a20-b26d-4c1f-b0f6-704cc8a00eb4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa16.mp4?alt=media&token=26e81785-87cd-4c6c-99ea-31e04b4936ae" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa17.mp4?alt=media&token=2e873f8d-49d8-4f8f-86ae-3a232e47c825" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa18.mp4?alt=media&token=b8fdb05a-ff6d-46db-b472-5e6cd54fbc7e" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/girl-archives.appspot.com/o/wawa22.mp4?alt=media&token=24f82374-3095-4db2-ab7d-8c40f556b8e4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/girl-archives.appspot.com/o/wawa24.mp4?alt=media&token=cab5f3d6-29ce-44d5-9954-0e19822baaa3" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa19.mp4?alt=media&token=85c5a969-a67e-4e6f-9b8a-741f1fd5f033" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/srikandi.mp4?alt=media&token=780b99a1-ce9f-4152-aec2-d976d947cea5" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="button-container">
+        <a href="https://www.instagram.com/reel/DD9_gOVSwq6/?igsh=MTd4aDhhbWpoMms2eA==" class="instagram-button" target="_blank"></a>
     </div>
-  <div id="incorrect-password-link" style="display: none;">
-    <a href="https://t.me/zakifrq" target="_blank">Incorrect password! Click here for <strong><u>Help on Telegram.</u></strong></a>
-</div>
-
-
-    <!-- Konten tersembunyi -->
-<div id="hidden-content">
-    <h2>congratulations</h2>
-    <p>You have successfully unlocked this section!</p>
-
-    <!-- Video 1 -->
-    <div class="gallery">
-        
-    <div class="media-item">
-        <h3>pap istri ter imut</h3> <!-- Teks di atas video -->
-        <video controls>
-            <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-1.mp4?alt=media&token=0dd7de8d-8840-45bc-8722-db5bd6ff65f2" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="media-item">
-        <h3>my girl</h3> <!-- Teks di atas video -->
-        <video controls>
-            <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-2.mp4?alt=media&token=0a200440-56dc-458f-9d52-f0048310af62" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="media-item">
-        <h3>pecandu tiktok</h3> <!-- Teks di atas video -->
-        <video controls>
-            <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-3.mp4?alt=media&token=99275eab-3ccc-4579-b59a-4987068ea636" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-        
-        <div class="media-item" data-type="audio">
-            <h3>Live ig</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-4.mp4?alt=media&token=697c0c37-51af-4e60-b272-e8ee1a3db217" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="audio">
-            <h3>nyanda mampan</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-5.mp4?alt=media&token=d6214270-9e73-43df-a21c-ad63c6838b58" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="audio">
-            <h3>ranto gudel🗿</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-6.mp4?alt=media&token=3f513fe0-4299-4c41-8bd0-cb420eee4a6f" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>yalili</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-7.mp4?alt=media&token=56e24079-df2b-4dd0-bdcb-ac4b75562f76" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>si paling jj</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-8.mp4?alt=media&token=09ae0f14-a824-42d6-aa0a-b9221862fb03" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>Scout</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa-9.mp4?alt=media&token=b4c00204-a5f9-43ce-92a5-8c5dc324cae9" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>tante tante</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa10.mp4?alt=media&token=5d24388a-ba36-4dd6-83bc-8ca484238f45" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>gula dirumah habis</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa11.mp4?alt=media&token=9e836a50-74e4-49e4-837d-a18db94db40d" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>i love you too😘</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa12.mp4?alt=media&token=6fc3a12d-29d0-45e9-a294-b375261bb38f" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>✌</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa13.mp4?alt=media&token=abb46988-e1e6-404b-a1ec-a88cd03b485b" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>Bojo telu akur kbeh</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa14.mp4?alt=media&token=6c0347e5-07b6-4311-8ece-efb6f7161161" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-        
-        <div class="media-item" data-type="video">
-            <h3>pesona girl</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa15.mp4?alt=media&token=3db96a20-b26d-4c1f-b0f6-704cc8a00eb4" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>bingung milih🤧</h3>
-            <video controls loop>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa16.mp4?alt=media&token=26e81785-87cd-4c6c-99ea-31e04b4936ae" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-      
-      <div class="media-item" data-type="video">
-            <h3>😜</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa17.mp4?alt=media&token=2e873f8d-49d8-4f8f-86ae-3a232e47c825" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-        
-        <div class="media-item" data-type="video">
-            <h3>lagi gabut</h3>
-            <video controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/html-file-c43ca.appspot.com/o/wa18.mp4?alt=media&token=b8fdb05a-ff6d-46db-b472-5e6cd54fbc7e" type="video/ogg">
-                Your browser does not support the audio element.
-            </video>
-        </div>
-             
-    </div>
-    <!-- Tambahkan lebih banyak video dengan teks di atasnya sesuai kebutuhan -->
-
-    <button onclick="goBack()">Back</button>
-</div>
-    
-    <script>
-    // Menampilkan atau menyembunyikan input password saat gambar diklik
-    function togglePasswordInput() {
-        const inputContainer = document.getElementById('password-input-container');
-        const hiddenContent = document.getElementById('hidden-content');
-        const incorrectPasswordLink = document.getElementById('incorrect-password-link');
-
-        // Jika input password ditampilkan, sembunyikan
-        if (inputContainer.style.display === 'block') {
-            inputContainer.style.display = 'none';
-            hiddenContent.style.display = 'none'; // Pastikan konten tersembunyi juga disembunyikan
-            incorrectPasswordLink.style.display = 'none'; // Sembunyikan link jika ada
-        } else {
-            // Jika input password disembunyikan, tampilkan
-            inputContainer.style.display = 'block';
-        }
-
-        const passwordField = document.getElementById('password');
-        passwordField.value = ''; // Reset nilai sandi
-        passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
-    }
-
-    // Memeriksa password dan menampilkan konten tersembunyi jika benar
-    function checkPassword() {
-        const correctPassword = "wawasangek"; // Password yang diinginkan
-        const passwordField = document.getElementById('password');
-        const inputPassword = passwordField.value;
-        const incorrectPasswordLink = document.getElementById('incorrect-password-link');
-
-        if (inputPassword === correctPassword) {
-            // Sembunyikan input dan tampilkan konten tersembunyi
-            document.getElementById('password-input-container').style.display = 'none';
-            document.getElementById('hidden-content').style.display = 'block';
-            incorrectPasswordLink.style.display = 'none'; // Sembunyikan link jika password benar
-            passwordField.value = ''; // Reset nilai sandi setelah berhasil
-        } else {
-            // Jika password salah, tampilkan link dan sembunyikan setelah 3 detik
-            incorrectPasswordLink.style.display = 'block';
-            passwordField.value = ''; // Reset nilai sandi setelah salah
-
-            // Menghilangkan link "Incorrect password" setelah 3 detik
-            setTimeout(() => {
-                incorrectPasswordLink.style.display = 'none';
-            }, 5000); // 5000ms = 5 detik
-        }
-    }
-
-    // Mengembalikan ke input password
-    function goBack() {
-        document.getElementById('password-input-container').style.display = 'block';
-        document.getElementById('hidden-content').style.display = 'none';
-        const passwordField = document.getElementById('password');
-        passwordField.value = ''; // Reset nilai sandi
-        passwordField.placeholder = 'Enter password'; // Kembalikan placeholder
-    }
-
-    // Menambahkan event listener untuk gambar kunci
-    document.getElementById('security-icon').addEventListener('click', togglePasswordInput);
-</script>
-
-
 </body>
 </html>
